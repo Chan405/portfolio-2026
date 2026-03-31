@@ -27,7 +27,10 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   const c = reduce
-    ? { hidden: {}, visible: { transition: { staggerChildren: 0, delayChildren: 0 } } }
+    ? {
+        hidden: {},
+        visible: { transition: { staggerChildren: 0, delayChildren: 0 } },
+      }
     : containerV;
   const i = reduce
     ? {
@@ -64,15 +67,20 @@ export function Hero() {
             variants={i}
             className="text-balance text-[2rem] font-semibold tracking-tight text-foreground sm:text-[2.75rem] sm:leading-[1.12] lg:text-[3rem]"
           >
-            Shipping real products through{" "}
-            <span className="text-gradient-brand">code, AI, and ops</span>
+            Building products{" "}
+            <span className="text-gradient-brand"> end-to-end </span>
+            <span className="text-gradient-brand">
+              - from infrastructure to user experience.
+            </span>
           </motion.h1>
           <motion.p
             variants={i}
             className="mt-7 max-w-xl text-pretty text-base font-normal leading-[1.75] text-muted sm:text-lg"
           >
             Full-stack developer with{" "}
-            <span className="font-medium text-foreground">production experience</span>{" "}
+            <span className="font-medium text-foreground">
+              production experience
+            </span>{" "}
             across APIs, realtime systems, and customer-facing apps. Grounded in
             how products earn trust, revenue, and scale.
           </motion.p>

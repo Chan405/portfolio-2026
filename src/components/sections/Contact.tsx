@@ -71,49 +71,60 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className={sectionClassMuted}
+      className={`${sectionClassMuted} relative overflow-hidden sm:py-12`}
       aria-labelledby="contact-heading"
     >
-      <Reveal className="mx-auto w-full max-w-xl text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,58,237,0.14),transparent_55%),radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.10),transparent_50%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-violet-300/15 blur-3xl"
+      />
+
+      <Reveal className="relative z-10 mx-auto w-full max-w-xl text-center">
+        <p className="mb-3 text-[0.8125rem] font-medium uppercase tracking-[0.18em] text-muted">
           Contact
         </p>
         <h2
           id="contact-heading"
-          className="mt-4 text-[1.65rem] font-semibold tracking-tight text-foreground sm:text-3xl"
+          className="text-[1.65rem] font-semibold tracking-tight text-foreground sm:text-3xl sm:leading-snug"
         >
           Let&apos;s talk
         </h2>
-        <p className="mx-auto mt-5 max-w-md text-pretty text-base font-normal leading-[1.75] text-muted sm:text-[1.0625rem]">
+        <p className="mx-auto mt-6 max-w-md text-pretty text-base font-normal leading-[1.8] text-muted sm:mt-7 sm:text-[1.0625rem] sm:leading-[1.75]">
           Open to collaborations, product discussions, or senior full-stack /
           product-engineering roles. I usually reply within a day or two.
         </p>
 
-        <ul className="mx-auto mt-12 flex max-w-sm flex-col gap-3 text-left sm:max-w-md">
-          {links.map(({ label, value, href, icon, external }) => (
-            <li key={label}>
-              <a
-                href={href}
-                {...(external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-                className="group flex items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-3.5 shadow-sm transition-[border-color,background-color,transform,box-shadow] duration-200 hover:border-gray-300 active:scale-[0.99] motion-reduce:active:scale-100"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-section text-muted transition-colors group-hover:border-gray-300 group-hover:text-foreground">
-                  {icon}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-muted">
-                    {label}
+        <div className="mx-auto mt-10 w-full max-w-sm rounded-2xl border border-gray-200 bg-white/65 px-3 py-3 shadow-sm backdrop-blur sm:mt-12 sm:max-w-md sm:px-4 sm:py-4">
+          <ul className="flex flex-col gap-2 text-left sm:gap-2.5">
+            {links.map(({ label, value, href, icon, external }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  {...(external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-3.5 py-3 shadow-sm transition-[border-color,background-color,transform,box-shadow] duration-200 hover:-translate-y-[2px] hover:border-gray-300 hover:shadow-md active:scale-[0.99] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/40 sm:gap-3.5 sm:rounded-2xl sm:px-4"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-section text-muted transition-colors group-hover:border-gray-300 group-hover:bg-white/80 group-hover:text-foreground sm:rounded-xl">
+                    {icon}
                   </span>
-                  <span className="mt-0.5 block truncate text-sm font-semibold text-foreground">
-                    {value}
+                  <span className="min-w-0 flex-1 text-left">
+                    <span className="block text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-muted">
+                      {label}
+                    </span>
+                    <span className="mt-1 block truncate text-[0.9375rem] font-medium leading-snug tracking-tight text-foreground sm:text-base">
+                      {value}
+                    </span>
                   </span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Reveal>
     </section>
   );

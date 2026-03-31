@@ -1,6 +1,6 @@
 export const siteConfig = {
   /** Shown in the navbar — replace with your name */
-  name: "Your Name",
+  name: "Aye Nyein Chan Moe",
   /**
    * Hero illustration — place PNG/WebP/SVG in /public (e.g. /brand/hero.png).
    * Default is a minimal SVG until you replace the file or this path.
@@ -12,12 +12,12 @@ export const siteConfig = {
   },
   /** Contact — update with your real details */
   contact: {
-    email: "you@example.com",
+    email: "ayenyeinchanmoe2712@gmail.com",
     /** Shown on the page */
-    phone: "+95 9XX XXX XXXX",
+    phone: "+95 9404483679",
     /** Use for tel: (digits and leading + only) */
-    phoneTel: "+959XXXXXXXXX",
-    linkedinUrl: "https://www.linkedin.com/in/your-profile",
+    phoneTel: "+959404483679",
+    linkedinUrl: "https://www.linkedin.com/in/aye-nyein-chan-moe-4724531b0/",
   },
 } as const;
 

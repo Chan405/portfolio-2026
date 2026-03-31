@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
-import { container, gapTight, sectionClassMuted } from "@/lib/layout";
+import { container, section } from "@/lib/layout";
 
 type Emphasis = "startup" | "ai" | "default";
 
@@ -8,17 +9,17 @@ const projects: {
   description: string;
   tags: readonly string[];
   emphasis: Emphasis;
-  wide?: boolean;
   badge: string;
+  image?: string;
 }[] = [
   {
     name: "Queue Management System",
     description:
-      "Startup-grade operations: realtime queues, QR flows, and LINE integration — built for reliability when the line never stops.",
-    tags: ["Realtime", "QR", "LINE API", "WebSockets", "Shipped"],
+      "Contributed to mobile app development and early-stage product ideation for a realtime queue platform with QR flows and LINE integration — focused on reliability for high-traffic operations.",
+    tags: ["Mobile", "Realtime", "QR", "LINE API"],
     emphasis: "startup",
-    wide: true,
-    badge: "Startup gold",
+    badge: "Startup",
+    image: "/brand/queue.png",
   },
   {
     name: "Atenxion",
@@ -27,34 +28,32 @@ const projects: {
     tags: ["AI platform", "LLMs", "TypeScript", "Orchestration"],
     emphasis: "ai",
     badge: "AI flagship",
+    image: "/brand/atenxion.png",
   },
   {
     name: "School Management System",
     description:
-      "Admin-friendly tools for schedules, attendance, and staff workflows — fewer spreadsheets, clearer accountability.",
-    tags: ["Full-stack", "Dashboard", "RBAC"],
+      "Frontend for admin workflows — schedules, attendance, and staff views — I shipped the UI and client-side experience on top of existing services.",
+    tags: ["Frontend", "Dashboard", "RBAC UI"],
     emphasis: "default",
     badge: "",
   },
   {
     name: "Pharma System",
     description:
-      "Pharmacy operations with tight inventory and UX that keeps the counter moving — accuracy without the clutter.",
-    tags: ["React", "API design", "Domain UX"],
+      "Frontend-only build: counter-focused pharmacy UI with inventory screens and flows that stay fast and accurate — integrated with the team’s APIs.",
+    tags: ["Frontend", "React", "Domain UX"],
     emphasis: "default",
     badge: "",
   },
 ];
 
-const cardMotion =
-  "transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
-
 function badgeClass(emphasis: Emphasis) {
   switch (emphasis) {
     case "startup":
-      return "border-gray-200 bg-section text-foreground";
+      return "border-slate-200/90 bg-slate-50 text-slate-600";
     case "ai":
-      return "border-gray-200 bg-white text-accent-purple";
+      return "border-violet-200/70 bg-violet-50/90 text-violet-800";
     default:
       return "";
   }
@@ -64,69 +63,101 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className={sectionClassMuted}
+      className={`${section.scrollMargin} ${section.border} ${section.padX} bg-section py-24 sm:py-12`}
       aria-labelledby="projects-heading"
     >
       <div className={container}>
         <Reveal>
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-muted">
-            Projects
-          </p>
-          <h2
-            id="projects-heading"
-            className="max-w-3xl text-[1.65rem] font-semibold tracking-tight text-foreground sm:text-3xl sm:leading-tight"
-          >
-            From AI infrastructure to live operations
-          </h2>
-          <p className="mt-4 max-w-2xl text-pretty text-base font-normal leading-[1.75] text-muted sm:text-[1.0625rem]">
-            Two builds stand out: a{" "}
-            <span className="font-medium text-foreground">
-              production-line queue platform
-            </span>{" "}
-            (QR + LINE + realtime) and{" "}
-            <span className="font-medium text-foreground">Atenxion</span>, an
-            AI-native product surface. The rest show breadth across domains.
-          </p>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-4 text-[0.8125rem] font-medium uppercase tracking-[0.18em] text-slate-500">
+              Projects
+            </p>
+            <h2
+              id="projects-heading"
+              className="text-[1.65rem] font-semibold tracking-tight text-slate-900 sm:text-3xl sm:leading-snug"
+            >
+              From AI infrastructure to live operations
+            </h2>
+            <div className="mx-auto mt-5 h-px w-10 bg-slate-300" aria-hidden />
+            <p className="mt-8 text-pretty text-base font-normal leading-[1.8] text-slate-600 sm:text-lg sm:leading-[1.75]">
+              Two builds stand out: a{" "}
+              <span className="font-semibold text-slate-900">
+                production-line queue platform
+              </span>{" "}
+              (QR + LINE + realtime) and{" "}
+              <span className="font-semibold text-slate-900">Atenxion</span>, an
+              AI-native product surface. The rest show breadth across domains.
+            </p>
+          </div>
         </Reveal>
 
-        <ul className={`mt-14 grid ${gapTight} sm:grid-cols-2`}>
+        <ul className="mt-20 grid grid-cols-1 gap-14 sm:mt-24 sm:grid-cols-2 sm:gap-16">
           {projects.map(
-            ({ name, description, tags, emphasis, wide, badge }, index) => (
-              <li
-                key={name}
-                className={`h-full ${wide ? "sm:col-span-2" : ""}`}
-              >
-                <Reveal className="h-full" delay={0.05 + index * 0.05}>
-                  {emphasis === "default" ? (
+            ({ name, description, tags, emphasis, badge, image }, index) => {
+              const illustrationLeft = index % 2 === 0; // Row 1: left, Row 2: right, ...
+              const thumbSrc =
+                image ??
+                (illustrationLeft ? "/brand/queue.png" : "/brand/atenxion.png");
+              return (
+                <li key={name}>
+                  <Reveal delay={0.05 + index * 0.06}>
                     <div
-                      className={`group/list flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 ${cardMotion} hover:border-gray-300 hover:shadow-sm`}
+                      className={`group/row relative rounded-2xl border border-slate-200/60 bg-white/40 p-8 transition-[transform,background-color,border-color,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[2px] hover:border-slate-300/80 hover:bg-white/55 motion-reduce:transition-none`}
                     >
-                      <CardBody
-                        name={name}
-                        description={description}
-                        tags={tags}
-                        badge={badge}
-                        emphasis={emphasis}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className={`group/list rounded-2xl bg-gradient-to-br from-accent-purple/45 to-accent-blue/38 p-px shadow-sm ${cardMotion} hover:shadow-sm`}
-                    >
-                      <div className="flex h-full min-h-full flex-col rounded-[0.9375rem] bg-white p-6 sm:p-8">
-                        <CardBody
-                          name={name}
-                          description={description}
-                          tags={tags}
-                          badge={badge}
-                          emphasis={emphasis}
-                        />
+                      <div className="flex flex-col gap-12 sm:flex-row sm:items-center sm:gap-14">
+                        <div
+                          className={
+                            illustrationLeft
+                              ? "order-1 flex w-full justify-center sm:order-1 sm:flex-1 sm:justify-start"
+                              : "order-1 flex w-full justify-center sm:order-2 sm:flex-1 sm:justify-start"
+                          }
+                        >
+                          <ProjectThumb name={name} src={thumbSrc} />
+                        </div>
+
+                        <div
+                          className={
+                            illustrationLeft
+                              ? "order-2 w-full sm:order-2 sm:flex-1"
+                              : "order-2 w-full sm:order-1 sm:flex-1"
+                          }
+                        >
+                          <div className="mx-auto w-full sm:mx-0">
+                            {badge ? (
+                              <span
+                                className={`inline-flex rounded-md border px-2 py-0.5 text-[0.625rem] font-semibold uppercase tracking-wider ${badgeClass(
+                                  emphasis,
+                                )}`}
+                              >
+                                {badge}
+                              </span>
+                            ) : null}
+
+                            <h3 className="mt-4 text-pretty text-[1.5rem] font-semibold tracking-tight text-slate-900 sm:text-[1.65rem]">
+                              {name}
+                            </h3>
+
+                            <p className="mt-4 text-pretty text-base font-normal leading-[1.8] text-slate-600 sm:text-[1.0625rem] sm:leading-[1.75]">
+                              {description}
+                            </p>
+
+                            <ul className="mt-7 flex flex-wrap gap-2">
+                              {tags.map((tag) => (
+                                <li key={tag}>
+                                  <span className="inline-flex rounded-md border border-slate-200/80 bg-white/70 px-2.5 py-1 text-[0.6875rem] font-medium text-slate-600 transition-colors duration-200 group-hover/row:bg-white group-hover/row:border-slate-300/90 group-hover/row:text-slate-700">
+                                    {tag}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  )}
-                </Reveal>
-              </li>
-            )
+                  </Reveal>
+                </li>
+              );
+            },
           )}
         </ul>
       </div>
@@ -134,45 +165,21 @@ export function Projects() {
   );
 }
 
-function CardBody({
-  name,
-  description,
-  tags,
-  badge,
-  emphasis,
-}: {
-  name: string;
-  description: string;
-  tags: readonly string[];
-  badge: string;
-  emphasis: Emphasis;
-}) {
+function ProjectThumb({ name, src }: { name: string; src?: string }) {
   return (
-    <>
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-          {name}
-        </h3>
-        {badge ? (
-          <span
-            className={`rounded-lg border px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider ${badgeClass(emphasis)}`}
-          >
-            {badge}
-          </span>
-        ) : null}
-      </div>
-      <p className="mt-4 flex-1 text-pretty text-sm font-normal leading-[1.75] text-muted sm:text-[0.95rem]">
-        {description}
-      </p>
-      <ul className="mt-6 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <li key={tag}>
-            <span className="inline-block rounded-lg border border-gray-200 bg-section px-2.5 py-1 text-[0.7rem] font-medium text-muted transition-colors duration-200 group-hover/list:border-gray-300 group-hover/list:text-foreground">
-              {tag}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </>
+    <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white ring-1 ring-slate-200/70">
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(124,58,237,0.08),transparent_55%),radial-gradient(ellipse_at_80%_85%,rgba(59,130,246,0.06),transparent_52%)]"
+        aria-hidden
+      />
+      <Image
+        src={src || "/brand/queue.png"}
+        alt={`${name} illustration`}
+        fill
+        className="relative h-full w-full object-cover"
+        sizes="(max-width: 640px) 80vw, 35vw"
+        quality={92}
+      />
+    </div>
   );
 }
