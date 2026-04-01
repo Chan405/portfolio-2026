@@ -10,8 +10,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Chan's Portfolio",
   description: "Personal portfolio",
+  icons: {
+    icon: [
+      { url: "/brand/Chan.png?v=1", type: "image/png" },
+      { url: "/brand/Chan.png?v=1", type: "image/png", sizes: "32x32" },
+      { url: "/brand/Chan.png?v=1", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/brand/Chan.png?v=1", type: "image/png" }],
+    shortcut: ["/brand/Chan.png?v=1"],
+  },
 };
 
 export default function RootLayout({

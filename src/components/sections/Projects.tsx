@@ -63,7 +63,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className={`${section.scrollMargin} ${section.border} ${section.padX} bg-section py-24 sm:py-12`}
+      className={`${section.scrollMargin} ${section.border} ${section.padX} bg-section py-12 sm:py-16 lg:py-20`}
       aria-labelledby="projects-heading"
     >
       <div className={container}>
@@ -91,7 +91,7 @@ export function Projects() {
           </div>
         </Reveal>
 
-        <ul className="mt-20 grid grid-cols-1 gap-14 sm:mt-24 sm:grid-cols-2 sm:gap-16">
+        <ul className="mt-14 grid grid-cols-1 gap-8 sm:mt-16 sm:gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-12">
           {projects.map(
             ({ name, description, tags, emphasis, badge, image }, index) => {
               const illustrationLeft = index % 2 === 0; // Row 1: left, Row 2: right, ...
@@ -102,14 +102,14 @@ export function Projects() {
                 <li key={name}>
                   <Reveal delay={0.05 + index * 0.06}>
                     <div
-                      className={`group/row relative rounded-2xl border border-slate-200/60 bg-white/40 p-8 transition-[transform,background-color,border-color,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[2px] hover:border-slate-300/80 hover:bg-white/55 motion-reduce:transition-none`}
+                      className={`group/row relative rounded-2xl border border-slate-200/60 bg-white/40 p-6 transition-[transform,background-color,border-color,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[2px] hover:border-slate-300/80 hover:bg-white/55 motion-reduce:transition-none sm:p-7`}
                     >
-                      <div className="flex flex-col gap-12 sm:flex-row sm:items-center sm:gap-14">
+                      <div className="flex flex-col gap-8 xl:flex-row xl:items-center xl:gap-12">
                         <div
                           className={
                             illustrationLeft
-                              ? "order-1 flex w-full justify-center sm:order-1 sm:flex-1 sm:justify-start"
-                              : "order-1 flex w-full justify-center sm:order-2 sm:flex-1 sm:justify-start"
+                              ? "order-1 flex w-full justify-center xl:order-1 xl:flex-1 xl:justify-start"
+                              : "order-1 flex w-full justify-center xl:order-2 xl:flex-1 xl:justify-start"
                           }
                         >
                           <ProjectThumb name={name} src={thumbSrc} />
@@ -118,8 +118,8 @@ export function Projects() {
                         <div
                           className={
                             illustrationLeft
-                              ? "order-2 w-full sm:order-2 sm:flex-1"
-                              : "order-2 w-full sm:order-1 sm:flex-1"
+                              ? "order-2 w-full xl:order-2 xl:flex-1"
+                              : "order-2 w-full xl:order-1 xl:flex-1"
                           }
                         >
                           <div className="mx-auto w-full sm:mx-0">
@@ -133,7 +133,7 @@ export function Projects() {
                               </span>
                             ) : null}
 
-                            <h3 className="mt-4 text-pretty text-[1.5rem] font-semibold tracking-tight text-slate-900 sm:text-[1.65rem]">
+                            <h3 className="mt-4 text-pretty text-[1.35rem] font-semibold tracking-tight text-slate-900 sm:text-[1.5rem]">
                               {name}
                             </h3>
 
@@ -167,7 +167,7 @@ export function Projects() {
 
 function ProjectThumb({ name, src }: { name: string; src?: string }) {
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white ring-1 ring-slate-200/70">
+    <div className="relative aspect-[5/4] w-full max-w-[520px] overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white ring-1 ring-slate-200/70 xl:aspect-square xl:max-w-none">
       <div
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(124,58,237,0.08),transparent_55%),radial-gradient(ellipse_at_80%_85%,rgba(59,130,246,0.06),transparent_52%)]"
         aria-hidden
@@ -177,7 +177,7 @@ function ProjectThumb({ name, src }: { name: string; src?: string }) {
         alt={`${name} illustration`}
         fill
         className="relative h-full w-full object-cover"
-        sizes="(max-width: 640px) 80vw, 35vw"
+        sizes="(max-width: 1023px) 92vw, 520px"
         quality={92}
       />
     </div>

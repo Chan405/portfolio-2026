@@ -6,6 +6,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide vertical scrollbar (keep scrolling) */
+html,
+body {
+  -ms-overflow-style: none; /* IE/old Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Chrome/Safari */
+}
+
 /* Tech × Business × Startup — light, calm */
 :root {
   --background: #ffffff;
