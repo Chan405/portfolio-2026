@@ -76,11 +76,11 @@ export function Contact() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,58,237,0.14),transparent_55%),radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.10),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.07),transparent_58%),radial-gradient(ellipse_at_bottom,rgba(59,130,199,0.055),transparent_52%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-violet-300/15 blur-3xl"
+        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-violet-200/12 blur-3xl"
       />
 
       <Reveal className="relative z-10 mx-auto w-full max-w-xl text-center">
@@ -98,7 +98,7 @@ export function Contact() {
           product-engineering roles. I usually reply within a day or two.
         </p>
 
-        <div className="mx-auto mt-10 w-full max-w-sm rounded-2xl border border-gray-200 bg-white/65 px-3 py-3 shadow-sm backdrop-blur sm:mt-12 sm:max-w-md sm:px-4 sm:py-4">
+        <div className="mx-auto mt-10 w-full max-w-sm rounded-2xl border border-black/[0.06] bg-white px-3 py-3 shadow-[0_4px_28px_rgba(0,0,0,0.06)] sm:mt-12 sm:max-w-md sm:px-4 sm:py-4">
           <ul className="flex flex-col gap-2 text-left sm:gap-2.5">
             {links.map(({ label, value, href, icon, external }) => (
               <li key={label}>
@@ -107,9 +107,9 @@ export function Contact() {
                   {...(external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-3.5 py-3 shadow-sm transition-[border-color,background-color,transform,box-shadow] duration-200 hover:-translate-y-[2px] hover:border-gray-300 hover:shadow-md active:scale-[0.99] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/40 sm:gap-3.5 sm:rounded-2xl sm:px-4"
+                  className="group flex items-center gap-3 rounded-xl border border-black/[0.06] bg-white px-3.5 py-3 shadow-[0_2px_12px_rgba(0,0,0,0.045)] transition-[border-color,background-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:border-black/[0.1] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] active:scale-[0.99] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/35 sm:gap-3.5 sm:rounded-2xl sm:px-4"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-section text-muted transition-colors group-hover:border-gray-300 group-hover:bg-white/80 group-hover:text-foreground sm:rounded-xl">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-black/[0.06] bg-section text-muted transition-colors group-hover:border-black/[0.1] group-hover:bg-white group-hover:text-foreground sm:rounded-xl">
                     {icon}
                   </span>
                   <span className="min-w-0 flex-1 text-left">

@@ -55,13 +55,13 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className={`${sectionClass} relative isolate overflow-hidden bg-gradient-to-b from-gray-50/70 via-white to-white py-24 sm:py-12`}
+      className={`${sectionClass} relative isolate overflow-hidden bg-gradient-to-b from-white via-[#fafafc] to-[#f5f5f7] py-24 sm:py-12`}
       aria-labelledby="experience-heading"
     >
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/70 via-white/60 to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-transparent" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_40%_at_15%_0%,rgba(124,58,237,0.06),transparent_60%),radial-gradient(ellipse_55%_35%_at_100%_25%,rgba(59,130,246,0.05),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_42%_at_12%_0%,rgba(99,102,241,0.045),transparent_62%),radial-gradient(ellipse_55%_38%_at_100%_18%,rgba(59,130,199,0.04),transparent_60%)]" />
 
         <div
           className="absolute inset-0 opacity-[0.035] mix-blend-overlay"
@@ -72,10 +72,10 @@ export function Experience() {
           }}
         />
 
-        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-gradient-to-br from-accent-purple/[0.08] to-accent-blue/[0.05] blur-3xl" />
-        <div className="absolute -right-28 bottom-0 h-80 w-80 rounded-full bg-gradient-to-br from-accent-purple/[0.05] to-accent-blue/[0.035] blur-3xl" />
+        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-gradient-to-br from-accent-purple/6 to-accent-blue/4 blur-3xl" />
+        <div className="absolute -right-28 bottom-0 h-80 w-80 rounded-full bg-gradient-to-br from-accent-purple/5 to-accent-blue/3 blur-3xl" />
 
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200/50 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/[0.06] to-transparent" />
       </div>
 
       <div className={`${container} relative`}>
@@ -102,10 +102,10 @@ export function Experience() {
               />
 
               {currentRole ? (
-                <div className="mt-8 rounded-3xl border border-gray-200/70 bg-white/60 p-6 shadow-[0_18px_60px_-30px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-transform duration-300 hover:-translate-y-0.5 hover:border-gray-300/80 hover:shadow-[0_26px_80px_-36px_rgba(0,0,0,0.22)]">
+                <div className="mt-8 rounded-3xl border border-black/[0.06] bg-white p-6 shadow-[0_4px_32px_rgba(0,0,0,0.055)] transition-transform duration-300 hover:-translate-y-px hover:border-black/[0.09] hover:shadow-[0_8px_40px_rgba(0,0,0,0.065)]">
                   <div className="relative">
-                    <div className="pointer-events-none absolute -inset-0.5 rounded-3xl bg-gradient-to-br from-accent-purple/[0.10] to-accent-blue/[0.06] opacity-70 blur-2xl" />
-                    <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/60 to-transparent opacity-70" />
+                    <div className="pointer-events-none absolute -inset-px rounded-[1.4rem] bg-gradient-to-br from-accent-purple/[0.06] to-accent-blue/[0.04] opacity-90 blur-xl" />
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white to-transparent opacity-80" />
 
                     <div className="relative flex items-start justify-between gap-4">
                       <div className="min-w-0">
@@ -151,14 +151,14 @@ export function Experience() {
             <div ref={rightRef}>
               <motion.div
                 aria-hidden
-                className="pointer-events-none absolute -right-10 -top-10 h-52 w-52 rounded-full bg-gradient-to-br from-accent-purple/[0.11] to-accent-blue/[0.08] blur-3xl"
+                className="pointer-events-none absolute -right-10 -top-10 h-52 w-52 rounded-full bg-gradient-to-br from-accent-purple/[0.06] to-accent-blue/[0.045] blur-3xl"
                 style={floatStyle}
               />
 
-              <div className="rounded-3xl border border-gray-200/70 bg-white/58 p-6 shadow-[0_18px_60px_-30px_rgba(0,0,0,0.16)] backdrop-blur-xl transition-shadow duration-300 hover:shadow-[0_26px_80px_-36px_rgba(0,0,0,0.22)]">
+              <div className="rounded-3xl border border-black/[0.06] bg-white p-6 shadow-[0_4px_32px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
                 <div className="relative">
-                  <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/70 via-white/30 to-transparent opacity-60" />
-                  <div className="pointer-events-none absolute -inset-0.5 rounded-[calc(theme(borderRadius.3xl)+2px)] bg-gradient-to-br from-accent-purple/[0.08] to-accent-blue/[0.05] opacity-40 blur-2xl" />
+                  <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white via-white to-[#fafafc]/90 opacity-90" />
+                  <div className="pointer-events-none absolute -inset-px rounded-[calc(theme(borderRadius.3xl)+2px)] bg-gradient-to-br from-accent-purple/[0.05] to-accent-blue/[0.03] opacity-70 blur-xl" />
 
                   <div className="relative flex items-baseline justify-between gap-4">
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted">
@@ -172,17 +172,17 @@ export function Experience() {
 
                 <ol className="relative mt-8 space-y-8">
                   <span
-                    className="absolute left-[0.6rem] top-3 bottom-3 w-px bg-gray-200/70 sm:left-3"
+                    className="absolute left-[0.6rem] top-3 bottom-3 w-px bg-black/[0.08] sm:left-3"
                     aria-hidden
                   />
 
                   {roles.map((role, index) => (
                     <li key={role.company} className="relative pl-10 sm:pl-14">
                       <span
-                        className={`absolute left-0 top-2 flex h-5 w-5 items-center justify-center rounded-full border bg-white shadow-sm sm:left-1.5 ${
+                        className={`absolute left-0 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:left-1.5 ${
                           role.current
-                            ? "border-accent-purple/40"
-                            : "border-gray-200"
+                            ? "border border-accent-purple/35"
+                            : "border border-black/[0.08]"
                         }`}
                         aria-hidden
                       >
@@ -197,8 +197,8 @@ export function Experience() {
 
                       <Reveal delay={0.06 + index * 0.08}>
                         <article
-                          className={`group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white/85 px-5 py-5 shadow-sm backdrop-blur-sm transition-[transform,border-color,box-shadow] duration-200 will-change-transform hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md sm:px-6 sm:py-6 ${
-                            role.current ? "ring-1 ring-accent-purple/20" : ""
+                          className={`group relative overflow-hidden rounded-2xl border border-black/[0.06] bg-white px-5 py-5 shadow-[0_2px_14px_rgba(0,0,0,0.045)] transition-[transform,border-color,box-shadow] duration-200 will-change-transform hover:-translate-y-px hover:border-black/[0.1] hover:shadow-[0_4px_22px_rgba(0,0,0,0.055)] sm:px-6 sm:py-6 ${
+                            role.current ? "ring-1 ring-accent-purple/15" : ""
                           }`}
                         >
                           <div
@@ -211,7 +211,7 @@ export function Experience() {
                           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
                             <div
                               aria-hidden
-                              className={`relative flex aspect-square w-14 items-center justify-center overflow-hidden rounded-2xl border border-gray-200/70 bg-white/65 shadow-sm ${role.current ? "ring-1 ring-accent-purple/20" : ""}`}
+                              className={`relative flex aspect-square w-14 items-center justify-center overflow-hidden rounded-2xl border border-black/[0.06] bg-[#f5f5f7] shadow-[0_1px_3px_rgba(0,0,0,0.04)] ${role.current ? "ring-1 ring-accent-purple/15" : ""}`}
                             >
                               <div
                                 className={`absolute inset-0 opacity-90 ${role.current ? "bg-[radial-gradient(circle_at_25%_20%,rgba(124,58,237,0.22),transparent_55%),radial-gradient(circle_at_75%_80%,rgba(59,130,246,0.16),transparent_55%)]" : "bg-[radial-gradient(circle_at_25%_20%,rgba(148,163,184,0.20),transparent_55%),radial-gradient(circle_at_75%_80%,rgba(226,232,240,0.18),transparent_55%)]"}`}

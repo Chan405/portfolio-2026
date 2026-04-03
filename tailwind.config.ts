@@ -20,8 +20,8 @@ const config: Config = {
         section: "var(--section)",
         border: "var(--border)",
         accent: {
-          purple: "#7C3AED",
-          blue: "#3B82F6",
+          purple: "#5b5bd6",
+          blue: "#3d7dcc",
         },
       },
       keyframes: {
@@ -35,15 +35,15 @@ const config: Config = {
           "66%": { transform: "translate(-5%, 5%) scale(0.98)" },
         },
         "ambient-glow": {
-          "0%, 100%": { opacity: "0.55", transform: "scale(1)" },
-          "50%": { opacity: "0.7", transform: "scale(1.03)" },
+          "0%, 100%": { opacity: "0.45", transform: "scale(1)" },
+          "50%": { opacity: "0.55", transform: "scale(1.01)" },
         },
       },
       animation: {
         "hero-fade-up": "hero-fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "hero-blob": "hero-blob 22s ease-in-out infinite",
         "hero-blob-slow": "hero-blob 30s ease-in-out infinite reverse",
-        "ambient-glow": "ambient-glow 20s ease-in-out infinite",
+        "ambient-glow": "ambient-glow 24s ease-in-out infinite",
       },
     },
   },

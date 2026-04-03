@@ -124,7 +124,7 @@ export function About() {
           {items.map(({ label, value, icon }) => (
             <li key={label} className="flex gap-5">
               <span
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white text-muted shadow-sm"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-black/[0.06] bg-white text-muted shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                 aria-hidden
               >
                 {icon}

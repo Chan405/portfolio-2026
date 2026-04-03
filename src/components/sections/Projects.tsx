@@ -28,7 +28,7 @@ const projects: {
     tags: ["AI platform", "LLMs", "TypeScript", "Orchestration"],
     emphasis: "ai",
     badge: "AI flagship",
-    image: "/brand/atenxion.png",
+    image: "/brand/atenxion.jpg",
   },
   {
     name: "School Management System",
@@ -37,6 +37,7 @@ const projects: {
     tags: ["Frontend", "Dashboard", "RBAC UI"],
     emphasis: "default",
     badge: "",
+    image: "/brand/school.jpg",
   },
   {
     name: "Pharma System",
@@ -102,7 +103,7 @@ export function Projects() {
                 <li key={name}>
                   <Reveal delay={0.05 + index * 0.06}>
                     <div
-                      className={`group/row relative rounded-2xl border border-slate-200/60 bg-white/40 p-6 transition-[transform,background-color,border-color,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[2px] hover:border-slate-300/80 hover:bg-white/55 motion-reduce:transition-none sm:p-7`}
+                      className={`group/row relative rounded-2xl border border-black/[0.06] bg-white p-6 shadow-[0_2px_16px_rgba(0,0,0,0.045)] transition-[transform,background-color,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[1px] hover:border-black/[0.1] hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] motion-reduce:transition-none sm:p-7`}
                     >
                       <div className="flex flex-col gap-8 xl:flex-row xl:items-center xl:gap-12">
                         <div
@@ -144,7 +145,7 @@ export function Projects() {
                             <ul className="mt-7 flex flex-wrap gap-2">
                               {tags.map((tag) => (
                                 <li key={tag}>
-                                  <span className="inline-flex rounded-md border border-slate-200/80 bg-white/70 px-2.5 py-1 text-[0.6875rem] font-medium text-slate-600 transition-colors duration-200 group-hover/row:bg-white group-hover/row:border-slate-300/90 group-hover/row:text-slate-700">
+                                  <span className="inline-flex rounded-md border border-black/[0.08] bg-[#f5f5f7] px-2.5 py-1 text-[0.6875rem] font-medium text-muted transition-colors duration-200 group-hover/row:border-black/[0.1] group-hover/row:bg-white group-hover/row:text-foreground">
                                     {tag}
                                   </span>
                                 </li>

@@ -171,7 +171,7 @@ function MobileNav({
       id="mobile-nav"
       className={[
         "md:hidden",
-        "border-t border-gray-200/70",
+        "border-t border-black/[0.06]",
         "bg-white/65 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55",
         "transition-[transform,opacity] duration-200",
         open ? "block" : "hidden",
@@ -311,11 +311,11 @@ function Brand({ onNavigate }: { onNavigate?: () => void }) {
       {/* Cap height so navbar stays compact; width grows so wordmark stays readable */}
       <span className="relative z-10 inline-flex h-9 max-h-9 items-center md:h-10 md:max-h-10">
         <img
-          src="/brand/Chan.png"
+          src="/brand/Chan1.png"
           alt={siteConfig.name}
           width={240}
           height={40}
-          className="h-full max-h-full w-auto max-w-[min(52vw,240px)] object-contain md:max-w-[280px]"
+          className="h-full max-h-full w-auto max-w-[min(52vw,240px)] object-contain mix-blend-multiply md:max-w-[280px]"
           draggable={false}
         />
       </span>
@@ -343,7 +343,7 @@ export function NavbarCentered() {
       setOpen={setOpen}
       headerClassName={[
         "sticky top-0 z-50",
-        "border-b border-gray-200/70",
+        "border-b border-black/[0.06]",
         "bg-white/65 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55",
       ].join(" ")}
       navClassName={`${container} grid grid-cols-[1fr_auto_1fr] items-center gap-4 py-2 ${section.padX}`}
@@ -382,7 +382,7 @@ export function NavbarSplit() {
       setOpen={setOpen}
       headerClassName={[
         "sticky top-0 z-50",
-        "border-b border-gray-200/70",
+        "border-b border-black/[0.06]",
         "bg-white/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60",
       ].join(" ")}
       navClassName={`${container} flex items-center justify-between gap-6 py-2 ${section.padX}`}
@@ -427,7 +427,7 @@ export function NavbarFloating() {
           setOpen={setOpen}
           headerClassName={[
             "rounded-3xl",
-            "ring-1 ring-gray-200/70",
+            "ring-1 ring-gray-200/50",
             "bg-white/55 backdrop-blur-xl supports-[backdrop-filter]:bg-white/45",
             "shadow-[0_10px_30px_rgba(2,6,23,0.06)]",
             "relative overflow-hidden",
@@ -453,7 +453,7 @@ export function NavbarSidebar() {
   const { open, setOpen } = useMobileMenuState();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/70 bg-white/65 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55">
+    <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/65 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55">
       <nav
         className={`${container} flex items-center justify-between gap-6 py-2 ${section.padX}`}
         aria-label="Primary"
@@ -519,12 +519,12 @@ export function NavbarSidebar() {
           className={[
             "absolute right-0 top-0 h-full w-[min(88vw,360px)]",
             "bg-white/70 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/60",
-            "ring-1 ring-gray-200/70 shadow-[0_10px_40px_rgba(2,6,23,0.18)]",
+            "ring-1 ring-gray-200/50 shadow-[0_10px_40px_rgba(2,6,23,0.18)]",
             "transition-transform duration-200",
             open ? "translate-x-0" : "translate-x-full",
           ].join(" ")}
         >
-          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200/70">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-black/[0.06]">
             <span className="text-sm font-semibold tracking-tight text-foreground">
               Navigation
             </span>
@@ -571,7 +571,7 @@ export function NavbarSidebar() {
             })}
           </ul>
 
-          <div className="p-4 border-t border-gray-200/70">
+          <div className="p-4 border-t border-black/[0.06]">
             <a
               href="#contact"
               className={[
@@ -605,7 +605,7 @@ export function NavbarCapsule() {
               "relative w-full max-w-4xl",
               "rounded-full",
               "bg-white/55 backdrop-blur-xl supports-[backdrop-filter]:bg-white/45",
-              "ring-1 ring-gray-200/70",
+              "ring-1 ring-gray-200/50",
               "shadow-[0_10px_30px_rgba(2,6,23,0.06)]",
               "overflow-hidden",
             ].join(" ")}

@@ -43,7 +43,7 @@ export function Hero() {
 
   return (
     <section
-      className={`relative overflow-hidden border-b border-gray-200 bg-white ${section.padX} pb-20 pt-8 sm:pb-24 sm:pt-10 lg:pt-12`}
+      className={`relative overflow-hidden border-b border-black/[0.06] bg-white ${section.padX} pb-20 pt-8 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] sm:pb-24 sm:pt-10 lg:pt-12`}
       aria-label="Introduction"
     >
       <motion.div
@@ -97,7 +97,7 @@ export function Hero() {
             </a>
             <a
               href="#contact"
-              className="inline-flex h-12 items-center justify-center rounded-2xl border border-gray-200 bg-white px-8 text-sm font-semibold text-foreground shadow-sm transition-[transform,colors] duration-200 hover:border-gray-300 hover:bg-section active:scale-[0.99] motion-reduce:transform-none"
+              className="inline-flex h-12 items-center justify-center rounded-2xl border border-black/[0.08] bg-white px-8 text-sm font-semibold text-foreground shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-[transform,colors] duration-200 hover:border-black/[0.12] hover:bg-[#f5f5f7] active:scale-[0.99] motion-reduce:transform-none"
             >
               Contact
             </a>
@@ -109,14 +109,14 @@ export function Hero() {
           className="relative w-full max-w-lg justify-self-center lg:max-w-none lg:justify-self-stretch"
         >
           <div
-            className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-90 blur-3xl motion-reduce:opacity-60 sm:-inset-8"
+            className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-70 blur-[64px] motion-reduce:opacity-50 sm:-inset-8"
             style={{
               background:
-                "linear-gradient(135deg, rgba(124,58,237,0.22), rgba(59,130,246,0.18))",
+                "linear-gradient(135deg, rgba(99,102,241,0.07), rgba(59,130,199,0.06))",
             }}
             aria-hidden
           />
-          <div className="relative aspect-[5/4] min-h-[320px] w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm sm:min-h-[360px] lg:min-h-[400px] xl:min-h-[440px]">
+          <div className="relative aspect-[5/4] min-h-[320px] w-full overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-[0_4px_28px_rgba(0,0,0,0.06)] sm:min-h-[360px] lg:min-h-[400px] xl:min-h-[440px]">
             <Image
               src={src}
               alt={alt}

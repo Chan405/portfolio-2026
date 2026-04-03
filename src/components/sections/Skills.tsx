@@ -107,7 +107,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className={`${section.scrollMargin} ${section.border} ${section.padX} bg-white py-28 sm:py-12`}
+      className={`${section.scrollMargin} ${section.border} ${section.padX} bg-white py-28 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] sm:py-12`}
       aria-labelledby="skills-heading"
     >
       <Reveal className={container}>
@@ -131,10 +131,10 @@ export function Skills() {
             return (
               <div
                 key={title}
-                className={`rounded-2xl border border-gray-100 bg-white/90 p-7 shadow-sm ring-1 ring-inset sm:p-8 ${shell.cardRing}`}
+                className={`rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_2px_18px_rgba(0,0,0,0.045)] ring-1 ring-inset ring-black/[0.04] sm:p-8 ${shell.cardRing}`}
               >
                 <div className="flex items-center gap-3">
-                  <span className={`flex h-8 w-8 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-gray-100 ${shell.icon}`} aria-hidden>
+                  <span className={`flex h-8 w-8 items-center justify-center rounded-xl bg-[#f5f5f7] shadow-sm ring-1 ring-black/[0.05] ${shell.icon}`} aria-hidden>
                     {icon}
                   </span>
                   <h3 className={`text-[0.9375rem] font-semibold tracking-tight sm:text-base ${shell.header}`}>
